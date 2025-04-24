@@ -4,3 +4,6 @@ export const APP_SLOGAN =
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
   "An Amazon clone built with Next.js and MongoDB";
+
+// We will show 9 items in Result Page
+export const PAGE_SIZE = Number(process.env.PAGE_SIZE || 9);
