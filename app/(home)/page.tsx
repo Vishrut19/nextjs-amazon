@@ -9,6 +9,7 @@ import {
 import { toSlug } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import ProductSlider from "@/components/shared/products/product-slider";
+import BrowsingHistoryList from "@/components/shared/browsing-history-list";
 
 export default async function Page() {
   // Gives 1st 4 items of the categories
@@ -87,6 +88,9 @@ export default async function Page() {
             />
           </CardContent>
         </Card>
+      </div>
+      <div className="p-4 bg-background">
+        <BrowsingHistoryList />
       </div>
     </>
   );

@@ -1,3 +1,5 @@
+import BrowsingHistoryList from "@/components/shared/browsing-history-list";
+import AddToBrowsingHistory from "@/components/shared/products/add-to-browsing-history";
 import ProductGallery from "@/components/shared/products/product-gallery";
 import ProductPrice from "@/components/shared/products/product-price";
 import ProductSlider from "@/components/shared/products/product-slider";
@@ -46,6 +48,7 @@ export default async function ProductDetails(props: {
 
   return (
     <div>
+      <AddToBrowsingHistory id={product._id} category={product.category} />
       <section>
         <div className="grid grid-cols-1 md:grid-cols-5  ">
           <div className="col-span-2">
@@ -116,6 +119,9 @@ export default async function ProductDetails(props: {
           products={relatedProducts.data}
           title={`Best Sellers in ${product.category}`}
         />
+      </section>
+      <section>
+        <BrowsingHistoryList className="mt-10" />
       </section>
     </div>
   );
