@@ -1,5 +1,6 @@
 import BrowsingHistoryList from "@/components/shared/browsing-history-list";
 import AddToBrowsingHistory from "@/components/shared/products/add-to-browsing-history";
+import AddToCart from "@/components/shared/products/add-to-cart";
 import ProductGallery from "@/components/shared/products/product-gallery";
 import ProductPrice from "@/components/shared/products/product-price";
 import ProductSlider from "@/components/shared/products/product-slider";
@@ -10,6 +11,7 @@ import {
   getProductBySlug,
   getRelatedProductsByCategory,
 } from "@/lib/actions/product.actions";
+import { generateId, round2 } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-select";
 
 export async function generateMetadata(props: {
@@ -107,6 +109,26 @@ export default async function ProductDetails(props: {
                   <div className="text-green-700 text-xl">In Stock</div>
                 ) : (
                   <div className="text-destructive text-xl">Out of Stock</div>
+                )}
+                {product.countInStock !== 0 && (
+                  <div className="flex justify-center items-center">
+                    <AddToCart
+                      item={{
+                        clientId: generateId(),
+                        product: product._id,
+                        name: product.name,
+                        slug: product.slug,
+                        category: product.category,
+                        price: round2(product.price),
+                        quantity: 1,
+                        countInStock: product.countInStock,
+                        image: product.images[0],
+                        // Size and color are based on selected item in this page.
+                        size: size || product.sizes[0],
+                        color: color || product.colors[0],
+                      }}
+                    />
+                  </div>
                 )}
               </CardContent>
             </Card>

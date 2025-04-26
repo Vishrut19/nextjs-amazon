@@ -7,3 +7,8 @@ export const APP_DESCRIPTION =
 
 // We will show 9 items in Result Page
 export const PAGE_SIZE = Number(process.env.PAGE_SIZE || 9);
+
+// $35 is free minimum for free shipping.
+export const FREE_SHIPPING_MIN_PRICE = Number(
+  process.env.FREE_SHIPPING_MIN_PRICE || 35
+);

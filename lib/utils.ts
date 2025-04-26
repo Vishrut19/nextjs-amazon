@@ -36,3 +36,12 @@ const NUMBER_FORMATTER = new Intl.NumberFormat("en-US");
 export function formatNumber(number: number) {
   return NUMBER_FORMATTER.format(number);
 }
+
+// Utility Function to Round 2 deciaml points
+export const round2 = (num: number) =>
+  Math.round((num + Number.EPSILON) * 100) / 100;
+
+// Ulility Function to generate ID for Shopping Cart
+export const generateId = () =>
+  //It will generate 24 digit random number
+  Array.from({ length: 24 }, () => Math.floor(Math.random() * 10)).join("");
