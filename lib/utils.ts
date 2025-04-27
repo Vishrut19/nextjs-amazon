@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { number } from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -18,7 +17,8 @@ export const toSlug = (text: string): string => {
     .toLowerCase()
     .replace(/[^\w\s-]/g, "")
     .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/^-+|-+$/g, "")
+    .replace(/-+/g, "-");
 };
 
 // Utility Function to Format Currency
