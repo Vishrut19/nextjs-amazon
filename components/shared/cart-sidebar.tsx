@@ -76,7 +76,7 @@ export default function CartSidebar() {
                         updateItem(item, Number(value));
                       }}
                     >
-                      <SelectTrigger className="text-xs w-12 ml-1 h-auto py-0">
+                      <SelectTrigger className="text-xs w-18 ml-1 h-auto py-0">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
