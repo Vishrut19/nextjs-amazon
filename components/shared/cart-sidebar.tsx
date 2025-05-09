@@ -15,7 +15,7 @@ import {
 } from "../ui/select";
 import { TrashIcon } from "lucide-react";
 import { FREE_SHIPPING_MIN_PRICE } from "@/lib/constants";
-import ProductPrice from "./products/product-price";
+import ProductPrice from "./product/product-price";
 
 export default function CartSidebar() {
   const {

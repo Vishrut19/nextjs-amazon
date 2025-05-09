@@ -1,11 +1,11 @@
 import BrowsingHistoryList from "@/components/shared/browsing-history-list";
-import AddToBrowsingHistory from "@/components/shared/products/add-to-browsing-history";
-import AddToCart from "@/components/shared/products/add-to-cart";
-import ProductGallery from "@/components/shared/products/product-gallery";
-import ProductPrice from "@/components/shared/products/product-price";
-import ProductSlider from "@/components/shared/products/product-slider";
-import Rating from "@/components/shared/products/rating";
-import SelectVariant from "@/components/shared/products/select-variant";
+import AddToBrowsingHistory from "@/components/shared/product/add-to-browsing-history";
+import AddToCart from "@/components/shared/product/add-to-cart";
+import ProductGallery from "@/components/shared/product/product-gallery";
+import ProductPrice from "@/components/shared/product/product-price";
+import ProductSlider from "@/components/shared/product/product-slider";
+import Rating from "@/components/shared/product/rating";
+import SelectVariant from "@/components/shared/product/select-variant";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   getProductBySlug,

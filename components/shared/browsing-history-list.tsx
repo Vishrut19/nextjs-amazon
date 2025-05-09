@@ -3,7 +3,7 @@ import useBrowsingHistory from "@/hooks/use-browsing-history";
 import React, { useEffect } from "react";
 import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
-import ProductSlider from "./products/product-slider";
+import ProductSlider from "./product/product-slider";
 
 export default function BrowsingHistoryList({
   className,

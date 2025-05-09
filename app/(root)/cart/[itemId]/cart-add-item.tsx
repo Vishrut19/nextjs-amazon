@@ -11,7 +11,7 @@ import { notFound } from "next/navigation";
 import useCartStore from "@/hooks/use-cart-store";
 import { FREE_SHIPPING_MIN_PRICE } from "@/lib/constants";
 import BrowsingHistoryList from "@/components/shared/browsing-history-list";
-import ProductPrice from "@/components/shared/products/product-price";
+import ProductPrice from "@/components/shared/product/product-price";
 
 export default function CartAddItem({ itemId }: { itemId: string }) {
   const {
