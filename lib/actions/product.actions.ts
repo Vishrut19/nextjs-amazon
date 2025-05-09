@@ -1,7 +1,7 @@
 "use server";
 
 import { connectToDatabase } from "@/lib/db";
-import Product, { IProduct } from "@/lib/db/models/products.models";
+import Product, { IProduct } from "@/lib/db/models/product.model";
 import { PAGE_SIZE } from "../constants";
 
 // GET PRODUCTS BY CATEGORIES

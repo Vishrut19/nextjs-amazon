@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { connectToDatabase } from "@/lib/db";
-import Product from "@/lib/db/models/products.models";
+import Product from "@/lib/db/models/product.model";
 
 export const GET = async (request: NextRequest) => {
   const listType = request.nextUrl.searchParams.get("type") || "history";

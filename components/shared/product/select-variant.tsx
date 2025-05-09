@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { IProduct } from "@/lib/db/models/products.models";
+import { IProduct } from "@/lib/db/models/product.model";
 
 import Link from "next/link";
 

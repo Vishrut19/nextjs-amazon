@@ -13,7 +13,7 @@ import Rating from "./rating";
 import { formatNumber, generateId, round2 } from "@/lib/utils";
 import ProductPrice from "./product-price";
 import ImageHover from "./image-hover";
-import { IProduct } from "@/lib/db/models/products.models";
+import { IProduct } from "@/lib/db/models/product.model";
 import AddToCart from "./add-to-cart";
 
 const ProductCard = ({

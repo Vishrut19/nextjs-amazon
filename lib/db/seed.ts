@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import path from "path";
 import data from "@/lib/data";
 import { connectToDatabase } from ".";
-import Product from "./models/products.models";
+import Product from "./models/product.model";
 
 // By calling this we can have access to the environment variables.
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
@@ -19,7 +19,7 @@ const main = async () => {
     const createdProducts = await Product.insertMany(products);
     console.log({
       createdProducts,
-      message: "Products created and data seeded successfully",
+      message: "Seeded database successfully",
     });
     process.exit(0);
   } catch (error) {
