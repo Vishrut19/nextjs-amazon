@@ -1,30 +1,32 @@
-import dotenv from "dotenv";
-import path from "path";
 import data from "@/lib/data";
 import { connectToDatabase } from ".";
 import Product from "./models/product.model";
+import { cwd } from "process";
+import { loadEnvConfig } from "@next/env";
+import User from "./models/user.model";
 
-// By calling this we can have access to the environment variables.
-dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+loadEnvConfig(cwd());
 
 const main = async () => {
   try {
-    const { products } = data;
+    const { products, users } = data;
     await connectToDatabase(process.env.MONGODB_URI);
 
-    // This will delete all the products in the database.
-    await Product.deleteMany();
+    await User.deleteMany();
+    const createdUser = await User.insertMany(users);
 
-    // This will create new products in the database.
+    await Product.deleteMany();
     const createdProducts = await Product.insertMany(products);
+
     console.log({
+      createdUser,
       createdProducts,
       message: "Seeded database successfully",
     });
     process.exit(0);
   } catch (error) {
     console.error(error);
-    throw new Error("Error seeding data");
+    throw new Error("Failed to seed database");
   }
 };
 

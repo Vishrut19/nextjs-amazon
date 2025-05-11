@@ -1,9 +1,10 @@
-import { IProductInput } from "@/types";
-import mongoose, { Document, model, Model, Schema } from "mongoose";
+import { Document, Model, model, models, Schema } from 'mongoose'
+import { IProductInput } from '@/types'
+
 export interface IProduct extends Document, IProductInput {
-  _id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  _id: string
+  createdAt: Date
+  updatedAt: Date
 }
 
 const productSchema = new Schema<IProduct>(
@@ -42,9 +43,9 @@ const productSchema = new Schema<IProduct>(
       type: Number,
       required: true,
     },
-    tags: { type: [String], default: ["new arrival"] },
-    colors: { type: [String], default: ["White", "Red", "Black"] },
-    sizes: { type: [String], default: ["S", "M", "L"] },
+    tags: { type: [String], default: ['new arrival'] },
+    colors: { type: [String], default: ['White', 'Red', 'Black'] },
+    sizes: { type: [String], default: ['S', 'M', 'L'] },
     avgRating: {
       type: Number,
       required: true,
@@ -80,7 +81,7 @@ const productSchema = new Schema<IProduct>(
     reviews: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Review",
+        ref: 'Review',
         default: [],
       },
     ],
@@ -88,9 +89,10 @@ const productSchema = new Schema<IProduct>(
   {
     timestamps: true,
   }
-);
+)
 
-const Product: Model<IProduct> =
-  mongoose.models.Product || model<IProduct>("Product", productSchema);
+const Product =
+  (models.Product as Model<IProduct>) ||
+  model<IProduct>('Product', productSchema)
 
-export default Product;
+export default Product
